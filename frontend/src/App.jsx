@@ -6,7 +6,7 @@ function App() {
 
   const getHandler = () => {
     axios
-      .get("http://localhost:5000/api/goals")
+      .get("/api/goals")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -29,7 +29,10 @@ function App() {
               <div className="goal-index">{index}</div>
               <div>
                 <div className="goal-text">{item.text}</div>
-                <div className="created-at">{item.createdAt}</div>
+                <div className="created-at">
+                  Date: {item.createdAt.slice(0, 10)} Time:{" "}
+                  {item.createdAt.slice(11, 19)}
+                </div>
               </div>
             </li>
           ))}

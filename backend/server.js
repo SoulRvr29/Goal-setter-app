@@ -20,3 +20,6 @@ app.use("/api/goals", require("./routes/goalRoutes"));
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
+module.exports = app;
+module.exports.handler = (req, res) => app(req, res);
