@@ -17,9 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/goals", require("./routes/goalRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("Hello on goal-setter-app!");
+});
+
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
-
-module.exports = app;
-module.exports.handler = (req, res) => app(req, res);
