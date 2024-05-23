@@ -6,9 +6,7 @@ function App() {
 
   const getHandler = () => {
     axios
-      .get(
-        "https://goal-setter-lriuc7is6-pawels-projects-6985fe0b.vercel.app/api/goals"
-      )
+      .get("https://goal-setter-app-mocha.vercel.app/api/goals")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
