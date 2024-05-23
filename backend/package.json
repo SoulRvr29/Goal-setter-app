@@ -4,8 +4,9 @@
   "description": "Goalsetter app",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "start": "node server.js",
+    "build": "npm install",
+    "dev": "nodemon server.js"
   },
   "author": "Paweł Chudecki",
   "license": "MIT",
