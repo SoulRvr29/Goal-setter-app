@@ -2,13 +2,10 @@
   "name": "mern-tutorial",
   "version": "1.0.0",
   "description": "Goalsetter app",
-  "main": "server.js",
-  "engines": {
-    "node": "20.x"
-  },
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "start": "node api/index.js",
+    "server": "nodemon api/index.js"
   },
   "author": "Paweł Chudecki",
   "license": "MIT",
