@@ -18,7 +18,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/goals", require("../routes/goalRoutes"));
 
 app.get("/", (req, res) => {
-  res.send("Hello on goal-setter-app!");
+  res.send(`
+  <b>Hello on goal-setter-app</b><br><br>
+  Database: MongoDB <br>
+  Author: Paweł Chudecki <br>
+  Route: /api/goals
+  `);
 });
 
 app.use(errorHandler);
