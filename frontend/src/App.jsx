@@ -6,7 +6,7 @@ function App() {
 
   const getHandler = () => {
     axios
-      .get("/api/goals")
+      .get("http://localhost:5000/api/goals")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
