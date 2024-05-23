@@ -11,8 +11,8 @@
   ],
   "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/backend"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
