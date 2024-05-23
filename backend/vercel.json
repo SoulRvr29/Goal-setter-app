@@ -1,14 +1,18 @@
 {
-  "functions": {
-    "backend/server.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/backend/(.*)",
-      "destination": "/backend/server.js"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "source": "/(.*)",
+      "destination": "/backend"
     }
   ]
 }
