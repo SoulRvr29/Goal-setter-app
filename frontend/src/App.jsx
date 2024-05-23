@@ -8,8 +8,8 @@ function App() {
 
   const getHandler = () => {
     axios
-      .get("http://localhost:5000/api/goals")
-      // .get("https://goal-setter-app-mocha.vercel.app/api/goals")
+      // .get("http://localhost:5000/api/goals")
+      .get("https://goal-setter-app-mocha.vercel.app/api/goals")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -21,12 +21,11 @@ function App() {
 
   const postHandler = (text) => {
     axios
-      .post("http://localhost:5000/api/goals", {
+      // .post("http://localhost:5000/api/goals", {
+      .post("https://goal-setter-app-mocha.vercel.app/api/goals", {
         text: text,
       })
-      // .post("https://goal-setter-app-mocha.vercel.app/api/goals", {
-      //    text: "test",
-      //  })
+
       .then((response) => {
         console.log(response.data);
       })
@@ -38,7 +37,8 @@ function App() {
 
   const deleteHandler = (id) => {
     axios
-      .delete(`http://localhost:5000/api/goals/${id}`)
+      // .delete(`http://localhost:5000/api/goals/${id}`)
+      .delete(`https://goal-setter-app-mocha.vercel.app/api/goals/${id}`)
       .then((response) => {
         console.log(response.data);
       })
