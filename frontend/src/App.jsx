@@ -26,10 +26,6 @@ function App() {
       .post("https://goal-setter-app-mocha.vercel.app/api/goals", {
         text: text,
       })
-
-      .then((response) => {
-        console.log(response.data);
-      })
       .then(() => {
         getHandler();
         setShowInput(false);
@@ -48,27 +44,15 @@ function App() {
         <h1 className="text-4xl p-1 text-center text-cyan-500 font-bold border-b-2 border-b-cyan-800">
           Goal Setter
         </h1>
-        <p className="text-cyan-800 text-center">
-          MERN (MongoDB, Express.js, React, and Node.js) stack app
-        </p>
-        {/* NAVIGATION */}
-        {/* <nav className="flex justify-center gap-4 m-4">
-          <button
-            className="bg-cyan-900 rounded-md px-2 py-1 uppercase font-semibold hover:bg-cyan-500 hover:text-cyan-950"
-            onClick={getHandler}
-          >
-            download list{" "}
-          </button>
-        </nav> */}
+        <p className="text-cyan-800 text-center">MERN stack app</p>
+        {/* GOALS */}
         <ul className="flex flex-col gap-4 px-4 mt-4">
           {data.length > 0 ? (
-            // GOALS
             data.map((item, index) => (
               <Goal
                 item={item}
                 key={item["_id"]}
                 index={index}
-                data={data}
                 setData={setData}
               />
             ))
@@ -111,7 +95,7 @@ function App() {
       </main>
       {/* FOOTER */}
       <footer className="text-center mt-4 border-t border-cyan-900 w-full mx-auto text-gray-500 p-1 font-medium">
-        Paweł Chudecki &copy; 2024
+        Created by Paweł Chudecki &copy; 2024
       </footer>
     </div>
   );
