@@ -2,9 +2,11 @@ import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Goal = ({ item, index, setData }) => {
   const [goalValue, setGoalValue] = useState(item.text);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const getHandler = () => {
     axios
@@ -77,9 +79,16 @@ const Goal = ({ item, index, setData }) => {
       <button
         title="delete"
         className="size-8 ml-1 grid place-items-center hover:text-red-700 transition-colors"
-        onClick={() => deleteHandler(item["_id"])}
+        onClick={() => {
+          deleteHandler(item["_id"]);
+          setIsDeleting(true);
+        }}
       >
-        <FaTrashAlt />
+        {!isDeleting ? (
+          <FaTrashAlt />
+        ) : (
+          <AiOutlineLoading3Quarters className="animate-spin" />
+        )}
       </button>
     </li>
   );

@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Goal from "./components/Goal";
 import { IoIosAddCircle } from "react-icons/io";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 function App() {
   const [data, setData] = useState([]);
   const [showInput, setShowInput] = useState(false);
   const [inputText, setInputText] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
 
   const getHandler = () => {
     axios
@@ -14,6 +17,8 @@ function App() {
       .get("https://goal-setter-app-mocha.vercel.app/api/goals")
       .then((response) => {
         setData(response.data);
+        setIsLoading(false);
+        setIsAdding(false);
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +62,9 @@ function App() {
               />
             ))
           ) : (
-            <p className="text-center text-xl m-2">No goals</p>
+            <p className="text-center text-xl m-2">
+              {isLoading ? "Loading..." : "No goals"}
+            </p>
           )}
           {!showInput ? (
             <button
@@ -85,9 +92,17 @@ function App() {
                 onClick={(e) => {
                   e.preventDefault();
                   postHandler(inputText);
+                  inputText && setIsAdding(true);
                 }}
               >
-                <IoIosAddCircle />
+                {isAdding ? (
+                  <AiOutlineLoading3Quarters
+                    size={22}
+                    className="animate-spin m-1"
+                  />
+                ) : (
+                  <IoIosAddCircle />
+                )}
               </button>
             </form>
           )}
