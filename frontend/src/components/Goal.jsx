@@ -43,9 +43,9 @@ const Goal = ({ item, index, setData }) => {
   return (
     <li
       key={item["_id"]}
-      className="goal relative border-2 border-cyan-900 rounded-xl p-1 grid grid-cols-[3.2rem_1fr_2.2rem] justify-center items-center bg-cyan-950 hover:drop-shadow-[0_0_6px_rgba(21,94,117,0.6)] hover:brightness-125 "
+      className="goal relative border-2 border-cyan-900 rounded-xl p-1 grid grid-cols-[3.2rem_1fr_2.2rem] justify-center items-center bg-cyan-950 hover:drop-shadow-[0_0_6px_rgba(21,94,117,0.6)] hover:brightness-125 hover:border-cyan-700 "
     >
-      <div className="text-xl border-cyan-900 border-2 rounded-full flex items-center justify-center size-8 aspect-square pb-[2px] mx-2 ">
+      <div className="text-xl border-cyan-900 border-2 rounded-full flex items-center justify-center size-8 aspect-square mx-2 ">
         {index + 1}
       </div>
       <div className="w-full">

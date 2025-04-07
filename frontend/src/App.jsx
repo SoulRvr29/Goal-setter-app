@@ -61,10 +61,10 @@ function App() {
                 setData={setData}
               />
             ))
+          ) : isLoading ? (
+            <p className="text-center text-xl m-2 animate-bounce">Loading...</p>
           ) : (
-            <p className="text-center text-xl m-2">
-              {isLoading ? "Loading..." : "No goals"}
-            </p>
+            <p className="text-center text-xl m-2">No goals</p>
           )}
           {!showInput ? (
             <button
